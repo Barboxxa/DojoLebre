@@ -3,7 +3,6 @@ module github.com/Barboxxa/DojoLebre
 go 1.21.0
 
 require (
-	github.com/go-playground/validator/v10 v10.15.1
 	github.com/labstack/echo v3.3.10+incompatible
 	gitlab.com/bavatech/architecture/software/libs/go-modules/bavalogs.git v0.6.0
 	gitlab.com/bavatech/architecture/software/libs/go-modules/gotag-validator.git/v2 v2.2.6
@@ -23,6 +22,7 @@ require (
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
+	github.com/go-playground/validator/v10 v10.15.1 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
 	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/uuid v1.3.0 // indirect
