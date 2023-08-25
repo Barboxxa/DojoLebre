@@ -3,16 +3,13 @@ module github.com/Barboxxa/DojoLebre
 go 1.21.0
 
 require (
-	github.com/aws/aws-sdk-go-v2/service/rekognition v1.30.6
+	github.com/aws/aws-sdk-go v1.44.331
 	github.com/labstack/echo v3.3.10+incompatible
+	github.com/texttheater/golang-levenshtein/levenshtein v0.0.0-20200805054039-cae8b0eaed6c
 	schneider.vip/problem v1.8.1
 )
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.21.0 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.41 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.4.35 // indirect
-	github.com/aws/smithy-go v1.14.2 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect

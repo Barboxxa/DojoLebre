@@ -1,8 +1,6 @@
 package rest
 
 import (
-	"encoding/base64"
-	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -50,9 +48,9 @@ func (u upload) GetSign(c echo.Context) error {
 }
 
 func validate(payload domain.SignRequest) error {
-	if _, err := base64.StdEncoding.DecodeString(payload.Image); err != nil {
-		return HandleError(http.StatusBadRequest, fmt.Sprintf("there is a validation error on body request: %s", err.Error()))
-	}
+	// if _, err := base64.StdEncoding.DecodeString(payload.Image); err != nil {
+	// 	return HandleError(http.StatusBadRequest, fmt.Sprintf("there is a validation error on body request: %s", err.Error()))
+	// }
 
 	return nil
 }

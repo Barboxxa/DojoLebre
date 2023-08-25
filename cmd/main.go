@@ -1,7 +1,13 @@
 package main
 
 import (
-	"github.com/aws/aws-sdk-go-v2/service/rekognition"
+	"fmt"
+
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/credentials"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/rekognition"
+	"github.com/aws/aws-sdk-go/service/textract"
 
 	"github.com/Barboxxa/DojoLebre/internal/interface/rest"
 	"github.com/Barboxxa/DojoLebre/internal/service"
@@ -9,11 +15,20 @@ import (
 
 func main() {
 
-	rekoClient := rekognition.New(rekognition.Options{
-		Region: "", // TODO: passar credentiais das envs;
+	sess, err := session.NewSession(&aws.Config{
+		Region:      aws.String("us-east-1"),
+		Credentials: credentials.NewStaticCredentials("", "", ""),
 	})
 
-	uploadService := service.NewUploadService(rekoClient)
+	if err != nil {
+		panic(fmt.Sprintf("Erro ao criar sessão: %s", err.Error()))
+	}
+
+	rekoClient := rekognition.New(sess)
+
+	textractClient := textract.New(sess)
+
+	uploadService := service.NewUploadService(rekoClient, textractClient)
 
 	controller := rest.Controllers{
 		UploadController: rest.NewUploadController(uploadService),
