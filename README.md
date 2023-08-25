@@ -1,6 +1,12 @@
 # DojoLebre
 Repo para dojo da liber
 
+## Executando a aplicação
+Para executar a aplicação, basta rodar o comando:
+```bash
+make run
+```
+
 ## Instalando ferramentas
 
 ### Linter
